@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #6452ff;
+  --brand-dark: #4c3de0;
+  --app-bg: radial-gradient(circle at top left, #eef2ff 0%, #f8fafc 32%, #ffffff 68%);
+  --surface: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-inter);
+  --color-background: var(--surface);
+  --color-foreground: var(--foreground);
+}
+
+* {
+  border-color: rgb(226 232 240);
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: #eef2ff;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  color: var(--foreground);
+  background-image: var(--app-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.gradient-hero {
+  background:
+    radial-gradient(80% 120% at 10% 0%, rgba(99, 102, 241, 0.25) 0%, rgba(99, 102, 241, 0) 70%),
+    radial-gradient(65% 95% at 100% 10%, rgba(14, 165, 233, 0.16) 0%, rgba(14, 165, 233, 0) 70%),
+    linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+}
+
+.glow {
+  box-shadow:
+    0 12px 35px -14px rgba(99, 102, 241, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.45) inset;
+}
