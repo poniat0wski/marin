@@ -173,7 +173,7 @@ export default function LandingPage() {
               <Link href="/login" className="hover:text-slate-900">
                 Login
               </Link>
-              <Button asChild size="sm">
+              <Button asChild size="sm" className="text-white hover:text-white">
                 <Link href="/signup">Start free</Link>
               </Button>
             </>
@@ -218,7 +218,7 @@ export default function LandingPage() {
               </>
             ) : (
               <>
-                <Button asChild size="lg" className="glow">
+                <Button asChild size="lg" className="glow text-white hover:text-white">
                   <Link href="/login">
                     Login
                     <ArrowRight className="h-4 w-4" />
