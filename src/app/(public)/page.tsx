@@ -18,8 +18,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  DEMO_ADMIN_CREDENTIALS,
-  DEMO_SELLER_CREDENTIALS,
   MOCK_AUTH_EVENT,
   type MockUserRole,
   clearMockAuthSession,
@@ -235,18 +233,6 @@ export default function LandingPage() {
 
           {sessionState.loading ? (
             <p className="text-sm text-slate-500">Checking session status...</p>
-          ) : null}
-
-          {!isLoggedIn && sessionState.source === "mock" ? (
-            <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3 text-sm text-indigo-900">
-              <p className="font-semibold">Demo credentials</p>
-              <p>
-                Admin: {DEMO_ADMIN_CREDENTIALS.email} / {DEMO_ADMIN_CREDENTIALS.password}
-              </p>
-              <p>
-                Seller: {DEMO_SELLER_CREDENTIALS.email} / {DEMO_SELLER_CREDENTIALS.password}
-              </p>
-            </div>
           ) : null}
 
           <div className="grid gap-3 sm:grid-cols-2">

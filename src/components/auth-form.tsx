@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
-  DEMO_ADMIN_CREDENTIALS,
   DEMO_SELLER_CREDENTIALS,
   getDemoRoleForCredentials,
   setMockAuthSession,
@@ -49,9 +48,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
       if (isLogin) {
         const role = getDemoRoleForCredentials(email, password);
         if (!role) {
-          setStatus(
-            `Demo login failed. Use ${DEMO_ADMIN_CREDENTIALS.email} / ${DEMO_ADMIN_CREDENTIALS.password} or ${DEMO_SELLER_CREDENTIALS.email} / ${DEMO_SELLER_CREDENTIALS.password}.`,
-          );
+          setStatus("Demo login failed. Check your email and password and try again.");
           setLoading(false);
           return;
         }
@@ -112,18 +109,6 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        {!getSupabaseClient() ? (
-          <div className="mb-3 rounded-lg border border-indigo-200 bg-indigo-50 p-3 text-xs text-indigo-900">
-            <p className="font-semibold">Demo mode credentials</p>
-            <p>
-              Admin: {DEMO_ADMIN_CREDENTIALS.email} / {DEMO_ADMIN_CREDENTIALS.password}
-            </p>
-            <p>
-              Seller: {DEMO_SELLER_CREDENTIALS.email} / {DEMO_SELLER_CREDENTIALS.password}
-            </p>
-          </div>
-        ) : null}
-
         <form className="space-y-3" onSubmit={handleSubmit}>
           <div className="space-y-1">
             <label className="text-sm text-slate-600">Email</label>
@@ -166,3 +151,4 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
     </Card>
   );
 }
+
